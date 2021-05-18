@@ -1,0 +1,56 @@
+<properties>
+    <property name="selectTime">
+        <![CDATA[
+            {
+                "query": {
+                    "match": {
+                        "time": #[time]
+                     }
+                 }
+        }
+        ]]>
+    </property>
+    <property name="scriptDsl">
+        <![CDATA[
+            {
+              "query": {
+                "match": {
+                  "name":#[name]
+                }
+              },
+               "size":10
+            }
+        ]]>
+    </property>
+
+    <property name="insertInfo">
+        <![CDATA[
+        {
+          "userId":#[userId],
+          "name":#[name]
+          "age":#[age]
+        }
+    ]]>
+    </property>
+    <property name="insertInfoCar">
+        <![CDATA[
+        {
+                        "carNo": #[carNo],
+                        "lon": #[lon],
+                        "lat": #[lat],
+                        "speed": #[speed],
+                        "angle": #[angle],
+                        "time":#[time],
+                        "source": #[source],
+                        "soc": #[soc],
+                        "socStatus": #[socStatus],
+                        "ip": #[ip],
+                        "iccId": #[iccId],
+                        "mileage": #[mileage],
+                        "carState": #[carState],
+                        "alarmState": #[alarmState],
+                        "certificateId": #[certificateId]
+        }
+    ]]>
+    </property>
+</properties>

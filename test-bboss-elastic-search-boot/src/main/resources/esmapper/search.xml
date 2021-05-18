@@ -1,0 +1,35 @@
+<properties>
+    <property name="selectUnitTypeName">
+        <![CDATA[
+            {
+                "query": {
+                    "match": {
+                        "unitTypeName": #[unitTypeName]
+                     }
+                 }
+        }
+        ]]>
+    </property>
+    <property name="selectCategoryType">
+        <![CDATA[
+            {
+                "query": {
+                    "match": {
+                        "categoryType": #[categoryType]
+                     }
+                 }
+        }
+        ]]>
+    </property>
+    <property name="deletePlateNo">
+        <![CDATA[
+            {
+                "query": {
+                    "match": {
+                        "plateNo": #[plateNo]
+                     }
+                 }
+        }
+        ]]>
+    </property>
+</properties>

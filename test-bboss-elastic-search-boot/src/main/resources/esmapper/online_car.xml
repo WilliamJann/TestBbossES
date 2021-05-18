@@ -1,0 +1,59 @@
+<!--创建网约车车辆轨迹索引-->
+<property name="createNbmdUnitOnlinecarCarlogIndex">
+    <![CDATA[{
+            "settings" : {
+                "number_of_shards": 5,
+                "number_of_replicas": 1
+            },
+            "mappings": {
+                    "properties": {
+                        "carNo": {
+                            "type": "keyword"
+                        },
+                        "lon": {
+                            "type": "keyword"
+                        },
+                        "lat": {
+                            "type": "keyword"
+                        },
+                        "speed": {
+                            "type": "keyword"
+                        },
+                        "angle": {
+                            "type": "integer"
+                        },
+                        "time": {
+                            "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                            "type": "date"
+                        },
+                        "source": {
+                            "type": "integer"
+                        },
+                        "soc": {
+                            "type": "integer"
+                        },
+                        "socStatus": {
+                            "type": "integer"
+                        },
+                        "ip": {
+                            "type": "keyword"
+                        },
+                        "iccId": {
+                            "type": "keyword"
+                        },
+                        "mileage": {
+                            "type": "keyword"
+                        },
+                        "carState": {
+                            "type": "long"
+                        },
+                        "alarmState": {
+                            "type": "long"
+                        },
+                        "certificateId": {
+                            "type": "keyword"
+                        }
+                    }
+            }
+        }]]>
+</property>

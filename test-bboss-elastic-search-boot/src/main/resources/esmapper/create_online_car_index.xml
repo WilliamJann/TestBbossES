@@ -1,0 +1,623 @@
+<propertise>
+
+
+    <!--创建信息索引-->
+    <property name="createNbmdUnitInfoIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "info":{
+                        "properties": {
+                            "categoryType": {
+                                "type": "keyword"
+                            },
+                            "underControlArea": {
+                                "type": "keyword"
+                            },
+                            "underControlAreaName": {
+                                "type": "keyword"
+                            },
+                            "unitName": {
+                                "type": "keyword"
+                            },
+                            "headOfUnit": {
+                                "type": "keyword"
+                            },
+                            "callPhone": {
+                                "type": "keyword"
+                            },
+                            "controlUnitCode": {
+                                "type": "keyword"
+                            },
+                            "controlUnitName": {
+                                "type": "keyword"
+                            },
+                            "controlPoliceCode": {
+                                "type": "keyword"
+                            },
+                            "controlPoliceName": {
+                                "type": "keyword"
+                            },
+                            "longitude": {
+                                "type": "keyword"
+                            },
+                            "latitude": {
+                                "type": "keyword"
+                            },
+                            "createTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+
+                            "nodeCode": {
+                                "type": "keyword"
+                            },
+                            "unitImg": {
+                                "type": "keyword"
+                            },
+                             "deviceNum": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建网约车车辆信息索引-->
+    <property name="createNbmdUnitOnlinecarCarIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "onlinecar":{
+                        "properties": {
+                            "companyId": {
+                                "type": "long"
+                            },
+                            "carNo": {
+                                "type": "keyword"
+                            },
+                            "realCarNo": {
+                                "type": "keyword"
+                            },
+                            "vehicleIdentificationNumber": {
+                                "type": "keyword"
+                            },
+                            "color": {
+                                "type": "keyword"
+                            },
+                            "certificateId": {
+                                "type": "keyword"
+                            },
+                            "carefulTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "insuranceTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "companyName": {
+                                "type": "keyword"
+                            },
+                            "taxiManufacturer": {
+                                "type": "keyword"
+                            },
+                            "carOwnerId": {
+                                "type": "long"
+                            },
+                            "mdtId": {
+                                "type": "long"
+                            },
+                            "carType": {
+                                "type": "long"
+                            },
+                            "carTypeName": {
+                                "type": "keyword"
+                            },
+                            "categoryId": {
+                                "type": "long"
+                            },
+                            "useType": {
+                                "type": "keyword"
+                            },
+                            "carAlarmNum": {
+                                "type": "long"
+                            },
+                            "carState": {
+                                "type": "long"
+                            },
+                            "status": {
+                                "type": "integer"
+                            },
+                            "lastResponseTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "lon": {
+                                "type": "keyword"
+                            },
+                            "lat": {
+                                "type": "keyword"
+                            },
+                            "speed": {
+                                "type": "keyword"
+                            },
+                            "angle": {
+                                "type": "integer"
+                            },
+                            "mileage": {
+                                "type": "integer"
+                            },
+                            "soc": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建网约车车辆轨迹索引-->
+    <property name="createNbmdUnitOnlinecarCarlogIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "onlinecar_carlog":{
+                        "properties": {
+                            "carNo": {
+                                "type": "keyword"
+                            },
+                            "lon": {
+                                "type": "keyword"
+                            },
+                            "lat": {
+                                "type": "keyword"
+                            },
+                            "speed": {
+                                "type": "keyword"
+                            },
+                            "angle": {
+                                "type": "integer"
+                            },
+                            "time": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "source": {
+                                "type": "integer"
+                            },
+                            "soc": {
+                                "type": "integer"
+                            },
+                            "socStatus": {
+                                "type": "integer"
+                            },
+                            "ip": {
+                                "type": "keyword"
+                            },
+                            "iccId": {
+                                "type": "keyword"
+                            },
+                            "mileage": {
+                                "type": "keyword"
+                            },
+                            "carState": {
+                                "type": "long"
+                            },
+                            "alarmState": {
+                                "type": "long"
+                            },
+                            "certificateId": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建车辆管理信息索引-->
+    <property name="createNbmdUnitVehicleManagerIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "vehicle_manager":{
+                        "properties": {
+                            "unitTypeName": {
+                                "type": "keyword"
+                            },
+                            "unitName": {
+                                "type": "keyword"
+                            },
+                            "unitNameCode": {
+                                "type": "keyword"
+                            },
+                            "unitTypeCode": {
+                                "type": "keyword"
+                            },
+                            "plateNo": {
+                                "type": "keyword"
+                            },
+                            "plateColor": {
+                                "type": "keyword"
+                            },
+                            "vehicleHead": {
+                                "type": "keyword"
+                            },
+                            "headCallPhone": {
+                                "type": "keyword"
+                            },
+                            "lineName": {
+                                "type": "keyword"
+                            },
+                            "lineId": {
+                                "type": "keyword"
+                            },
+                            "isDeleted": {
+                                "type": "integer"
+                            },
+                            "createTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "carTeam": {
+                                "type": "keyword"
+                            },
+                            "cardNumber": {
+                                "type": "keyword"
+                            },
+                            "deviceNo": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建网约车公司索引-->
+    <property name="createNbmdUnitOnlinecarCompanyIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "onlinecar_company":{
+                        "properties": {
+
+
+                            "name": {
+                                "type": "keyword"
+                            },
+                            "fullName": {
+                                "type": "keyword"
+                            },
+                            "parentId": {
+                                "type": "integer"
+                            },
+                            "parentName": {
+                                "type": "keyword"
+                            },
+                            "parentPath": {
+                                "type": "keyword"
+                            },
+                            "code": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建网约车终端设备索引-->
+    <property name="createNbmdUnitOnlinecarMdtIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "onlinecar_mdt":{
+                        "properties": {
+                            "mdtid": {
+                                "type": "long"
+                            },
+                            "phoneNo": {
+                                "type": "keyword"
+                            },
+                            "inUse": {
+                                "type": "short"
+                            },
+                            "gatewayId": {
+                                "type": "integer"
+                            },
+                            "esn": {
+                                "type": "integer"
+                            },
+                            "type": {
+                                "type": "keyword"
+                            },
+                            "module": {
+                                "type": "keyword"
+                            },
+                            "mac": {
+                                "type": "keyword"
+                            },
+                            "remark": {
+                                "type": "keyword"
+                            },
+                            "protocalversion": {
+                                "type": "keyword"
+                            },
+                            "iccId": {
+                                "type": "integer"
+                            },
+                            "groupId": {
+                                "type": "long"
+                            },
+                            "firmware": {
+                                "type": "keyword"
+                            },
+                            "channelNo": {
+                                "type": "integer"
+                            },
+                            "ways": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+    <!--创建网约车司机索引-->
+    <property name="createNbmdUnitOnlinecarDriveIndex">
+        <![CDATA[{
+                "settings" : {
+                    "number_of_shards": 5,
+                    "number_of_replicas": 1
+                },
+                "mappings": {
+                    "onlinecar_drive":{
+                        "properties": {
+                            "name": {
+                                "type": "keyword"
+                            },
+                            "male": {
+                                "type": "short"
+                            },
+                            "phone": {
+                                "type": "keyword"
+                            },
+                            "score": {
+                                "type": "integer"
+                            },
+                            "grade": {
+                                "type": "integer"
+                            },
+                            "password": {
+                                "type": "keyword"
+                            },
+                            "personalId": {
+                                "type": "keyword"
+                            },
+                            "address": {
+                                "type": "keyword"
+                            },
+                            "homeTel": {
+                                "type": "keyword"
+                            },
+                            "bornDate": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "serviceNo": {
+                                "type": "keyword"
+                            },
+                            "companyId": {
+                                "type": "integer"
+                            },
+                            "carId": {
+                                "type": "integer"
+                            },
+                            "latestUpdateTime": {
+                                "type": "keyword"
+                            },
+                            "photoPath": {
+                                "type": "keyword"
+                            },
+                            "certificateId": {
+                                "type": "keyword"
+                            },
+                            "certificateType": {
+                                "type": "keyword"
+                            },
+                            "certificateOrganization": {
+                                "type": "keyword"
+                            },
+                            "superviseDepartment": {
+                                "type": "keyword"
+                            },
+                            "supervisePhone1": {
+                                "type": "keyword"
+                            },
+                            "supervisePhone2": {
+                                "type": "keyword"
+                            },
+                            "validityStartTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "complaintPhone": {
+                                "type": "keyword"
+                            },
+                            "validityTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "recordNumber": {
+                                "type": "keyword"
+                            },
+                            "wildCard": {
+                                "type": "keyword"
+                            },
+                            "major": {
+                                "type": "short"
+                            },
+                            "registerDate": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "isChat": {
+                                "type": "integer"
+                            },
+                            "joinGroupDate": {
+                                "type": "keyword"
+                            },
+                            "creditLevel": {
+                                "type": "integer"
+                            },
+                            "workTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "singleShift": {
+                                "type": "short"
+                            },
+                            "datPath": {
+                                "type": "keyword"
+                            },
+                            "codepath": {
+                                "type": "keyword"
+                            },
+                            "wxCodePath": {
+                                "type": "keyword"
+                            },
+                            "certifiPhoto": {
+                                "type": "keyword"
+                            },
+                            "bankMerCode": {
+                                "type": "keyword"
+                            },
+                            "violationScore": {
+                                "type": "integer"
+                            },
+                            "remark": {
+                                "type": "keyword"
+                            },
+                            "nation": {
+                                "type": "integer"
+                            },
+                            "zipcode": {
+                                "type": "keyword"
+                            },
+                            "email": {
+                                "type": "keyword"
+                            },
+                            "contactAddress": {
+                                "type": "keyword"
+                            },
+                            "certificateStatus": {
+                                "type": "integer"
+                            },
+                            "driverLicense": {
+                                "type": "keyword"
+                            },
+                            "employmentStatus": {
+                                "type": "integer"
+                            },
+                            "assessmentStartTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "assessmentEndTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "integrityAssessmentTime": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "assessmentLv": {
+                                "type": "integer"
+                            },
+                            "assessmentRecord": {
+                                "type": "keyword"
+                            },
+                            "assessmentCore": {
+                                "type": "integer"
+                            },
+                            "assessmentCompany": {
+                                "type": "keyword"
+                            },
+                            "qrcodPath": {
+                                "type": "keyword"
+                            },
+                            "httpQrcodContent": {
+                                "type": "keyword"
+                            },
+                            "bankCard": {
+                                "type": "keyword"
+                            },
+                            "driverVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "photoVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "alipayVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "wechatVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "yzfVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "datVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "certifiPhotoVersion": {
+                                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis",
+                                "type": "date"
+                            },
+                            "authStrategy": {
+                                "type": "integer"
+                            },
+                            "companyName": {
+                                "type": "keyword"
+                            },
+                            "carNo": {
+                                "type": "keyword"
+                            },
+                            "nationality": {
+                                "type": "keyword"
+                            }
+                        }
+                    }
+                }
+            }]]>
+    </property>
+
+</propertise>

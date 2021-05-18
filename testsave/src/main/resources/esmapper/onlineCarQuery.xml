@@ -1,0 +1,135 @@
+<properties>
+    <property name="getOnlineCarLog">
+        <![CDATA[
+            {
+              "query": {
+                "bool": {
+                  "must": [
+                    #if($carNo && !$carNo.equals(""))
+                    {
+                      "match": {
+                        "carNo": #[carNo]
+                      }
+                    },
+                    #end
+                    #if($startTime && !$startTime.equals("")  && $endTime && !$endTime.equals(""))
+                    {
+                      "range": {
+                        "time": {
+                          "gte":  #[startTime],
+                          "lte":  #[endTime]
+                        }
+                      }
+                    }
+                   #end
+                  ]
+                }
+              },
+             "sort": [ {
+                            "time": {
+                                "order": "asc"
+                            }
+                        }
+                ]
+            }
+        ]]>
+    </property>
+    <property name="getMaxTimeGroupByCarNo">
+        <![CDATA[
+         {
+        "size":0,
+        "query":{
+            "bool":{
+                "must":[
+                    {
+                        "terms":{
+                            "carNo":[
+                                "$carNos[0]"
+                                #foreach($carNo in $carNos)
+                                ,"$carNo"
+                                #end
+                            ]
+                        }
+
+                    }
+
+
+                ]
+            }
+
+        },
+        "aggs":{
+            "terms":{
+                "terms":{
+                    "field":"carNo"
+                },
+                "aggs": {
+                "max_time": {
+                    "max": {
+                        "field": "time"
+                    }
+                }
+
+              }
+
+            }
+        }
+
+
+            }
+        ]]>
+    </property>
+    <property name="getInfoByMaxTimeAndCarNo">
+        <![CDATA[
+         {
+              "query": {
+                "bool": {
+                  "should": [
+
+                    {
+                        "bool":{
+                            "must":[
+                            {
+                                "match":{
+                                    "carNo":"$maps[0].key"
+                                }
+
+                            },{
+                                "match":{
+                                    "time":"$maps[0].max_time.value_as_string"
+                                }
+                            }
+
+                        ]
+                        }
+
+                    }
+                    #foreach($map in $maps)
+                    ,{
+                        "bool":{
+                            "must":[
+                                {
+                                    "match":{
+                                        "carNo":"$map.key"
+                                    }
+
+                                },{
+                                    "match":{
+                                        "time":"$map.max_time.value_as_string"
+                                    }
+                                }
+                        ]
+                        }
+
+                    }
+                    #end
+
+
+
+                  ]
+                }
+              }
+            }
+        ]]>
+    </property>
+</properties>
